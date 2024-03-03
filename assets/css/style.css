@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins&family=Protest+Riot&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+.container
+{
+    background: #171717;
+    color: #ffff;
+    padding: 2rem;
+    width: 40%;
+    margin: 4rem auto;
+    border-radius: 20px;
+    background-size: cover; 
+    background-repeat: no-repeat;
+
+}
+
+.weather-header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input
+{
+    border: none;
+    background:#1e1e1e;
+    outline: none;
+    color: #ffff;
+    padding: 0.5rem 2.5rem;
+    border-radius: 15px;
+}
+
+.input::placeholder
+{
+    color: #fff;
+}
+
+.search
+{
+    position: relative;
+}
+.search i {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 15px;
+    color: #fff;
+}
+
+.wheather-units
+{
+    font-size: 1.5rem;
+}
+
+.wheather-units span
+{
+    cursor: pointer;
+}
+.wheather-units span:first-child
+{
+    margin-right: 0.5rem;
+}
+
+.weather-body
+{
+    text-align: center;
+    margin-top: 3rem;
+}
+.weather-city
+{
+    color: #1e1e1e;
+}
+.datetime
+{
+    margin: 2rem;
+    font-size: 14px;
+}
+.dat
+{
+    color: #171717;
+}
+.weather-forcast
+{
+    background: #1e1e1e;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-top: 2rem;
+    border-radius: 10px;
+}
+.weather-icon img
+{
+    width: 100px;
+}
+.temperature
+{
+    font-size: 1.75rem;
+}
+.weather-info
+{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 1rem;
+    margin-top: 3rem;
+}
+.weather-card
+{
+    display: flex;
+    align-items: center;
+    background: #1e1e1e;
+    padding: 1rem;
+    border-radius: 10px;
+}
+.weather-card i{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+.weather-card p
+{
+    font-size: 14px;
+}
+
+@media(max-width:936px)
+{
+    .container
+    {
+        width: 90%;
+    }
+    .weather-header
+    {
+        flex-direction: column;
+    }
+    .wheather-units
+    {
+        margin-top: 1rem;
+    }
+}
+
+@media(max-width:400px)
+{
+    .weather-info
+    {
+        grid-template-columns: none;
+    }
+}
