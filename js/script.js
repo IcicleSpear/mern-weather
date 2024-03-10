@@ -1,6 +1,7 @@
 //state
 let currcity="Chennai";
 let units="metric";
+
 function setBackgroundImage(weatherCondition) {
     // Define a mapping of weather conditions to background images
     const backgroundImages = {
@@ -12,6 +13,8 @@ function setBackgroundImage(weatherCondition) {
         "Snow": "url('assets/snow.gif')",
         "Mist": "url('assets/haze.gif')",
         "Haze": "url('assets/haze.gif')",
+        "Fog": "url('assets/haze.gif')",
+        "Smoke": "url('assets/smoke.gif')",
 
         // Add more weather conditions and corresponding background images as needed
     };
@@ -25,7 +28,7 @@ function setBackgroundImage(weatherCondition) {
         container.style.backgroundImage = backgroundImages[weatherCondition];
     } else {
         // If no specific background image is defined for the weather condition, set a default background image
-        container.style.backgroundImage = "url('default.jpg')";
+        container.style.backgroundImage = "url('clouds.gif')";
     }
 }
 
@@ -40,6 +43,8 @@ let realfeal=document.querySelector(".realfeel");
 let humidity=document.querySelector(".humidity");
 let wind=document.querySelector(".wind");
 let pressure=document.querySelector(".pressure");
+let days = document.querySelectorAll(".day");
+let nexfor = document.querySelectorAll(".wh");
 
 //units
 document.querySelector(".celcius").addEventListener('click',()=>
@@ -117,6 +122,17 @@ function getweather()
         let a=data.weather[0].main;
         console.log(a);
         setBackgroundImage(a);
+        fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${currcity}&appid=${API_KEY}&units=${units}`)
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    for (let i = 1; i <= 4; i++) {
+                        days[i - 1].innerHTML = `<img src="http://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@4x.png">`;
+                        nexfor[i-1].innerHTML=`<p>${data.list[i].weather[0].main}</p>`;
+
+                    }
+                })
+        
 
     })
 }

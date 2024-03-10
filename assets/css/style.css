@@ -7,13 +7,17 @@
     box-sizing: border-box;
     font-family: 'Poppins',sans-serif;
 }
+body
+{
+    background: linear-gradient(to right,#d197f8,#73cbf4);
+}
 .container
 {
     background: #171717;
     color: #ffff;
     padding: 2rem;
     width: 40%;
-    margin: 4rem auto;
+    margin: 2rem auto;
     border-radius: 20px;
     background-size: cover; 
     background-repeat: no-repeat;
@@ -148,4 +152,69 @@ input
     {
         grid-template-columns: none;
     }
+}
+
+.next
+{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 1rem;
+    transition: 0.2s;
+}
+.day {
+    width: 100px; 
+    height: auto; 
+    margin: 10px;
+}
+
+.day img {
+    width: 100px; 
+    height: auto; 
+}
+.next-title
+{
+    display:inline-block;
+    align-self: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+.up-forecast
+{
+    text-align: center;
+}
+.wh
+{
+    background: #1e1e1e;
+    opacity: 0.5;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-top: 2rem;
+    border-radius: 10px;
+}
+.next a:hover
+{
+    transform: translateY(-10px);
+}
+
+.foot
+{
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.foot a
+{
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+.foot a:hover
+{
+    font-size: 1.2rem
 }
